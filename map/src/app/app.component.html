@@ -1,0 +1,59 @@
+<div class="container" style="margin-top: 25px;">
+  <section>
+    <h5>Enter your home address</h5>
+    <div class="autocompleter">
+      <app-autocomplete-box (searchPlaceText)="selectedHomePlace($event)"></app-autocomplete-box>
+    </div>
+    <div class="buttonSection">
+      <!-- <button class="btn btn-primary">Save Home Address</button>
+      <button class="btn btn-light">Cancel</button> -->
+    </div>
+    <div class="preferredLocation" *ngIf="enablePreferredLocations">
+      <div class="row">
+        <div class="col-lg-12">Preferred location</div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <button class="btn btn-primary" (click)="addNewLocation()">Add
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+      </div>    
+    </div>
+    {{preferredLocationList.length > 0}}
+    <ng-container *ngIf="preferredLocationList.length > 0">
+      <ng-container *ngFor="let listItem of preferredLocationList; let i = index;">
+        <div class="row">
+          <div class="col-lg-6">
+            <app-autocomplete-box  (searchPlaceText)="selectedPlace($event, i)"></app-autocomplete-box>
+           <!--  repeating - {{i}} -->
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+    <div class="buttonSection">
+      <button class="btn btn-primary" (click)="sortLocation()">Sort The Location</button>
+    </div>
+    <!-- <div class="map-location-table responsivediv" *ngIf="sortedLocation">
+        <table id="map-location" cellspacing="0" width="100%">
+          <thead>
+              <th class="longwords" style="width:15%">Home Location</th>
+              <th class="longwords" style="width:15%">Prefered Location</th>
+              <th class="longwords" style="width:15%">Estimated Distance</th>
+              <th class="longwords" style="width:15%">Estimated Time</th>
+          </thead>
+          <tbody *ngif="sortedLocation">
+            <tr *ngfor="let item of sortedLocation">
+              <td style="width:15%" class="longwords">{{item.homeLocationData.placeName}}</td>
+              <td style="width:15%" class="longwords">{{item.preferedLocationData.placeName}}</td>
+              <td style="width:15%" class="longwords">{{item.preferedLocationData.distance}}</td>
+              <td style="width:15%" class="longwords">{{item.preferedLocationData.time}}</td>
+            </tr>
+          </tbody>
+        </table>
+    
+      </div> -->
+  </section> 
+   
+</div>
+

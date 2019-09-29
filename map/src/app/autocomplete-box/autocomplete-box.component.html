@@ -1,0 +1,4 @@
+<form (ngSubmit)="onSubmit()"> 
+  <input placeholder="Enter postcode, landmark, state, town" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="searchbox borderBottom" #search [formControl]="searchControl" id="location_searchbox" (change)="onsearchTextChange()">
+</form>
+

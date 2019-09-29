@@ -1,0 +1,14 @@
+agm-map {
+  height: 300px;
+}
+
+
+.map-location-table {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.responsivediv{
+  width: 90%;
+  overflow-x: auto;
+}
